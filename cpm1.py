@@ -50,10 +50,10 @@ def login(email, password):
             return response_data.get('idToken')
         else:
             error_message = response_data.get("error", {}).get("message", "Unknown error during login.")
-            print(f"❌ Login failed: {error_message}")
+            print(f"❌ Ошибка входа: {error_message}")
             return None
     except requests.exceptions.RequestException as e:
-        print(f"❌ Network error: {e}")
+        print(f"❌ Ошибка сети: {e}")
         return None
 
 def set_rank(token):
@@ -81,10 +81,10 @@ def set_rank(token):
             print("✅ Скрипт успешно выполнен!")
             return True
         else:
-            print(f"❌ Failed to set rank. HTTP Status: {response.status_code}")
+            print(f"❌ Не удалось выполнить скрипт: {response.status_code}")
             return False
     except requests.exceptions.RequestException as e:
-        print(f"❌ Network error during rank set: {e}")
+        print(f"❌ Ошибка сети: {e}")
         return False
 
 def check_clan_id(token, email, password):
@@ -113,8 +113,8 @@ def main_logic():
     while True:
         print("\nFree King Rank & Daily Task")
         try:
-            email = input("📧 Enter email: ").strip()
-            password = input("🔒 Enter password: ").strip()
+            email = input("📧 Введите gmail: ").strip()
+            password = input("🔒 Введите пароль: ").strip()
         except (EOFError, KeyboardInterrupt):
             print("\nExiting...")
             break
@@ -123,7 +123,7 @@ def main_logic():
         if auth_token:
             if set_rank(auth_token):
                 check_clan_id(auth_token, email, password)
-                print("\n✅ Operation completed.")
+                print("\n✅ Скрипт завершён.")
 
 if __name__ == "__main__":
     main_logic()
