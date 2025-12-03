@@ -111,7 +111,7 @@ def check_clan_id(token, email, password):
 def main_logic():
     """Main loop for user input and processing."""
     while True:
-        print("\nFree King Rank & Daily Task")
+        print("\n👑Script for rank king👑")
         try:
             email = input("📧 Введите gmail: ").strip()
             password = input("🔒 Введите пароль: ").strip()
