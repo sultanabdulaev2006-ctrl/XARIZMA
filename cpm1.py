@@ -48,8 +48,6 @@ ACCOUNTS = [
     {"email": "cpmcpmking35@gmail.com", "password": "666666"},
     {"email": "cpmcpmking36@gmail.com", "password": "666666"},
 ]
-
-
 def login(email, password):
     """Login to CPM using Firebase API."""
     print(f"\n🔐 Logging in as {email}...")
